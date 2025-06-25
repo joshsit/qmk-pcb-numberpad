@@ -4,3 +4,5 @@ CAPS_WORD_ENABLE = yes
 RGBLIGHT_ENABLE = yes
 WS2812_DRIVER = vendor
 # WS2812_DRIVER =  bitbang
+
+COMBO_ENABLE = yes

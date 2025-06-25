@@ -34,21 +34,21 @@
 // };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-        [0] = LAYOUT_ortho_4x3(KC_7, KC_8, KC_9, KC_4, KC_5, KC_6, KC_1, KC_2, KC_3, KC_0, KC_PDOT, KC_ENT),
+        [0] = LAYOUT_ortho_4x3(KC_7, KC_8, KC_9, KC_4, KC_5, KC_6, KC_1, KC_2, KC_3, KC_0, KC_PDOT, TG(1)),
 
         /* Keymap 0: Basic layer
         * .--------------------.
-        * |   7  |   8  |   9  |   
+        * |   7  |   8  |   9  |   7+8 = ENT, 8+9 = BSPC
         * |------+------+------|
         * |   4  |   5  |   6  |
         * |------+------+------|
         * |   1  |   2  |   3  |
         * |-------------+------|
-        * |   0  |   .  |  ENT |
+        * |   0  |   .  | TG(1)|
         * '--------------------'
         */  
 
-        [1] = LAYOUT_ortho_4x3(KC_MS_L, KC_BTN1, KC_ESC, KC_MS_D, KC_BTN2, LCTL(KC_C), KC_MS_U, KC_WH_D, KC_3, LCTL(KC_V), KC_MS_R, KC_WH_U, KC_ENT),
+        [1] = LAYOUT_ortho_4x3(KC_MS_L, KC_BTN1, KC_ESC, KC_MS_D, KC_BTN2, LCTL(KC_C), KC_MS_U, KC_WH_D, KC_3, LCTL(KC_V), KC_MS_R, KC_WH_U, TG(0)),
         /* Keymap 1: Nav layer
         * .--------------------.
         * | MS_L | L-CLK|  ESC |   
@@ -57,7 +57,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         * |------+------+------|
         * | MS_U | MW_D |CTL(V)|
         * |-------------+------|
-        * | MS_R | MW_U |  ENT |
+        * | MS_R | MW_U | TG(0)|
         * '--------------------'
         */ 
         
@@ -98,6 +98,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         // *               '--------------------'             '--------------------'              */
 };
 
+
+//COMBOS here
+const uint16_t PROGMEM testbackspace[] = {KC_8, KC_9, COMBO_END};
+const uint16_t PROGMEM testenter[] = {KC_7, KC_8, COMBO_END};
+
+combo_t key_combos[] = {
+    COMBO(testbackspace, KC_BSPC),
+    COMBO(testenter, KC_ENT), // keycodes with modifiers are possible too!
+};
 
 // // LED STUFF
 
