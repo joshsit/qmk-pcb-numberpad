@@ -1,4 +1,4 @@
-# qmk-pcb-numberpad
+# qmk-pcb_numberpad
 Project files for development of twelve key mechanical keyboard numberpad with custom PCB. 
 
 2025-06-19, build v1:
